@@ -3,15 +3,25 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import java.net.URL?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ListView?>
 <VBox fx:controller="client.Controller"
       xmlns:fx="http://javafx.com/fxml" alignment="center">
 
+    <HBox fx:id="authPanel">
+        <TextField fx:id="loginField" promptText="login" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="passwordField" promptText="password" HBox.hgrow="ALWAYS" onAction="#trytoAuth"/>
+        <Button text="auth" onAction="#trytoAuth" maxWidth="100"/>
+        <Button text="reg" onAction="#clickRegBtn" maxWidth="100"/>
+    </HBox>
 
+    <HBox VBox.vgrow="ALWAYS">
+        <TextArea fx:id="textArea" HBox.hgrow="ALWAYS"  editable="false" wrapText="true"/>
+        <ListView fx:id="clientList" minWidth="120" visible="false" managed="false"
+        onMouseReleased="#clientListClicked"/>
+    </HBox>
 
-    <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false"/>
-
-    <HBox>
+    <HBox fx:id="messagePanel" visible="false" managed="false">
         <TextField fx:id="textField" promptText="input text" HBox.hgrow="ALWAYS" onAction="#sendMsg"/>
         <Button text="send" onAction="#sendMsg"/>
     </HBox>

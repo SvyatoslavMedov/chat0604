@@ -1,0 +1,16 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.PasswordField?>
+
+<?import javafx.scene.control.TextArea?>
+<VBox fx:controller="client.RegController"
+      xmlns:fx="http://javafx.com/fxml" alignment="center">
+
+        <TextField fx:id="loginField" promptText="login" HBox.hgrow="ALWAYS"/>
+        <PasswordField fx:id="passwordField" promptText="password" />
+        <TextField fx:id="nicknameField" promptText="nickName" onAction="#tryToReg" />
+        <TextArea fx:id="textArea" VBox.vgrow="ALWAYS" editable="false"/>
+        <Button text="reg"  maxWidth="100" onAction="#tryToReg"/>
+</VBox>
